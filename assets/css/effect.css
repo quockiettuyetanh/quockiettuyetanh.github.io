@@ -1,0 +1,90 @@
+/* Effect */
+
+.loading-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-color: #fff;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    transition: opacity 3s ease;
+    z-index: 9999;
+}
+
+.main-screen {
+    opacity: 0;
+    transition: opacity 3s ease;
+}
+
+.heart_loading {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    background-color: var(--color-pink);
+    transform: rotate(-45deg);
+    animation: heartbeat 1s infinite;
+}
+
+.heart_loading::before,
+.heart_loading::after {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: var(--color-pink);
+    border-radius: 50%;
+}
+
+.heart_loading::before {
+    top: -50px;
+    left: 0;
+}
+
+.heart_loading::after {
+    left: 50px;
+    top: 0;
+}
+
+@keyframes heartbeat {
+
+    0%,
+    100% {
+        transform: scale(1) rotate(-45deg);
+    }
+
+    50% {
+        transform: scale(1.2) rotate(-45deg);
+    }
+}
+
+
+.heart {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: url('../images/heart.png') no-repeat center center;
+    background-size: cover;
+    z-index: 999;
+    position: fixed;
+    animation: fall 5s linear infinite;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-100px) rotate(0deg) translateX(50px) rotateZ(0deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(100vh) rotate(90deg) rotateZ(-10deg) translateX(0px);
+        opacity: 0;
+    }
+}
+
+/* Effect */
