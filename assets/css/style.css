@@ -379,18 +379,3 @@ i.mobile {
         width: 90%;
     }
 }
-
-.header-bottom {
-    z-index: 999;
-    background: white;
-    /* width: 100% !important; */
-    transition: all .3s ease-in-out;
-}
-
-.sticky {
-    position: fixed;
-    overflow-x: hidden;
-    top: 0;
-    transition: all .3s ease-in-out;
-    width: 100% !important;
-}
