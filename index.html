@@ -15,9 +15,13 @@
     <link rel="stylesheet" href="./assets/libs/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/effect.css">
+    <link rel="stylesheet" href="./assets/css/floating.css">
     <!-- <link rel="stylesheet" href="./assets/libs/animate/animate.min.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="icon" href="assets/images/favi.png">
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 <body>
@@ -56,8 +60,8 @@
                                     <li><a href="#couple" class="text-decoration-none nav-link">Cặp đôi</a></li>
                                     <li><a href="#our-story" class="text-decoration-none nav-link">Chuyện tình yêu </a>
                                     </li>
-                                    <li><a href="#album" class="text-decoration-none nav-link">Album hình cưới</a></li>
                                     <li><a href="#event" class="text-decoration-none nav-link">Sự kiện cưới</a></li>
+                                    <li><a href="#album" class="text-decoration-none nav-link">Album hình cưới</a></li>
                                     <li><a href="#mung-cuoi" class="text-decoration-none nav-link">Mừng cưới</a></li>
                                 </ul>
                             </div>
@@ -146,13 +150,14 @@
                         </div>
                         <div class="row justify-content-center">
                             <div class="col-lg-9 col-12">
-                                <div class="couple-area">
-                                    <div class="row align-items-center">
-                                        <div
-                                            class="col-md-6 col-12 mb-2 img-groom animate__animated animate__fadeInLeft">
-                                            <img src="assets/images/groom.jpeg" alt="" width="100%">
-                                        </div>
-                                        <div class="col-md-6 col-12 animate__animated animate__fadeInRight">
+                                <div id="couple-area">
+                                    <div class="icon-box">
+                                        <i class="fa-solid fa-heart heart-2"></i>
+                                    </div>
+                                    <div class="left-img"></div>
+                                    <div class="right-img"></div>
+                                    <div class="row align-items-center mb-2">
+                                        <div class="col-md-6 col-12 mb-2">
                                             <div class="name_groom mb-2">
                                                 <h2>Võ Quốc Kiệt</h2>
                                             </div>
@@ -181,12 +186,12 @@
                                             </a>
 
                                         </div>
-                                    </div>
-                                    <div class="row align-items-center flex-row-reverse">
-                                        <div class="col-md-6 col-12 mb-2 img-bride">
-                                            <img src="assets/images/bride.jpeg" alt="" width="100%">
+                                        <div class="col-md-6 col-12 mb-2 img-groom">
+                                            <img src="assets/images/groom.jpeg" alt="" width="100%">
                                         </div>
-                                        <div class="col-md-6 col-12 animate__animated animate__fadeInRight">
+                                    </div>
+                                    <div class="row align-items-center flex-row-reverse mb-2">
+                                        <div class="col-md-6 col-12 mb-2">
                                             <div class="name_bride mb-2">
                                                 <h2>Nguyễn Thị Tuyết Anh</h2>
                                             </div>
@@ -214,6 +219,10 @@
                                                 </i>
                                             </a>
                                         </div>
+                                        <div class="col-md-6 col-12 mb-2 img-bride">
+                                            <img src="assets/images/bride.jpeg" alt="" width="100%">
+                                        </div>
+
 
                                     </div>
                                 </div>
@@ -222,7 +231,7 @@
                     </div>
                 </section>
                 <div class="gap"></div>
-                <section class="accessibilities">
+                <section id="accessibilities">
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-md-9 col-12 text-center">
@@ -237,8 +246,11 @@
                     </div>
 
                 </section>
+
                 <div class="gap"></div>
                 <section id="our-story" class="py-1">
+                    <div class="left-img"></div>
+                    <div class="right-img"></div>
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-md-9 col-12 text-center">
@@ -252,15 +264,13 @@
                         </div>
                         <div class="row justify-content-center">
                             <div class="col-md col-12">
-                                <ul>
+                                <ul class="p-0">
                                     <li>
-                                        <div class="row justify-content-between mb-5">
+                                        <div
+                                            class="row justify-content-between mb-5 align-items-center box_content_our_story">
                                             <div class="col-lg-5 col-12">
                                                 <div class="details">
-                                                    <h3>Sức mạnh của những chiếc thuyền với công suất cực lớn từ phía 2
-                                                        gia
-                                                        đình
-                                                        &lt;3</h3>
+                                                    <h3>Gặp Gỡ</h3>
                                                     <span class="date"> 2...0...hùi đó</span>
                                                     <p>Câu chuyện bắt nguồn từ lời kể "Thằng bé đó nói... 30 tuổi hem ai
                                                         cưới con...
@@ -284,22 +294,19 @@
                                             </div>
                                             <div class="col-lg-5 col-12">
                                                 <div class="img-holder">
-                                                    <img src="https://cdn.biihappy.com/ziiweb/website/663f172e32fa34b03604862d/379b267cf9bf7e87aa36aff2656e65e4.jpeg"
-                                                        alt="" width="100%">
+                                                    <img src="./assets/images/hihi.jpeg" alt="" width="100%">
                                                 </div>
                                             </div>
                                         </div>
 
                                     </li>
                                     <li>
-                                        <div class="row justify-content-between mb-5 flex-row-reverse">
+                                        <div
+                                            class="row justify-content-between align-items-center mb-5 flex-row-reverse box_content_our_story_reverse">
 
                                             <div class="col-lg-5 col-12">
                                                 <div class="details">
-                                                    <h3>Sức mạnh của những chiếc thuyền với công suất cực lớn từ phía 2
-                                                        gia
-                                                        đình
-                                                        &lt;3</h3>
+                                                    <h3>Bên Nhau</h3>
                                                     <span class="date"> 2...0...hùi đó</span>
                                                     <p>Câu chuyện bắt nguồn từ lời kể "Thằng bé đó nói... 30 tuổi hem ai
                                                         cưới con...
@@ -323,21 +330,18 @@
                                             </div>
                                             <div class="col-lg-5 col-12">
                                                 <div class="img-holder">
-                                                    <img src="https://cdn.biihappy.com/ziiweb/website/663f172e32fa34b03604862d/379b267cf9bf7e87aa36aff2656e65e4.jpeg"
-                                                        alt="" width="100%">
+                                                    <img src="./assets/images/haha.jpeg" alt="" width="100%">
                                                 </div>
                                             </div>
                                         </div>
 
                                     </li>
                                     <li>
-                                        <div class="row justify-content-between mb-5">
+                                        <div
+                                            class="row justify-content-between align-items-center mb-5 box_content_our_story">
                                             <div class="col-lg-5 col-12">
                                                 <div class="details">
-                                                    <h3>Sức mạnh của những chiếc thuyền với công suất cực lớn từ phía 2
-                                                        gia
-                                                        đình
-                                                        &lt;3</h3>
+                                                    <h3>Cầu Hôn</h3>
                                                     <span class="date"> 2...0...hùi đó</span>
                                                     <p>Câu chuyện bắt nguồn từ lời kể "Thằng bé đó nói... 30 tuổi hem ai
                                                         cưới con...
@@ -361,22 +365,19 @@
                                             </div>
                                             <div class="col-lg-5 col-12">
                                                 <div class="img-holder">
-                                                    <img src="https://cdn.biihappy.com/ziiweb/website/663f172e32fa34b03604862d/379b267cf9bf7e87aa36aff2656e65e4.jpeg"
-                                                        alt="" width="100%">
+                                                    <img src="./assets/images/hihi.jpeg" alt="" width="100%">
                                                 </div>
                                             </div>
                                         </div>
 
                                     </li>
                                     <li>
-                                        <div class="row justify-content-between mb-5 flex-row-reverse">
+                                        <div
+                                            class="row justify-content-between align-items-center mb-5 flex-row-reverse box_content_our_story_reverse">
 
                                             <div class="col-lg-5 col-12">
                                                 <div class="details">
-                                                    <h3>Sức mạnh của những chiếc thuyền với công suất cực lớn từ phía 2
-                                                        gia
-                                                        đình
-                                                        &lt;3</h3>
+                                                    <h3>Một Nhà</h3>
                                                     <span class="date"> 2...0...hùi đó</span>
                                                     <p>Câu chuyện bắt nguồn từ lời kể "Thằng bé đó nói... 30 tuổi hem ai
                                                         cưới con...
@@ -400,8 +401,7 @@
                                             </div>
                                             <div class="col-lg-5 col-12">
                                                 <div class="img-holder">
-                                                    <img src="https://cdn.biihappy.com/ziiweb/website/663f172e32fa34b03604862d/379b267cf9bf7e87aa36aff2656e65e4.jpeg"
-                                                        alt="" width="100%">
+                                                    <img src="./assets/images/haha.jpeg" alt="" width="100%">
                                                 </div>
                                             </div>
                                         </div>
@@ -412,7 +412,249 @@
                         </div>
                     </div>
                 </section>
+                <section id="time-counter">
+                    <div class="overlay">
+                        <div class="container">
+                            <div class="row justify-content-between align-items-center">
+                                <div class="col-lg-5 col-12">
+                                    <span class="text-light">Counting the minutes for.....</span>
+                                    <h1 class="text-light">08 Dec 2024</h1>
+                                    <h1 class="text-light" style="font-size: 5rem !important;">The big day</h1>
+
+                                </div>
+                                <div class="col-lg-7 col-12 d-flex justify-content-center align-items-center">
+                                    <div class="launch-time d-flex gap-3">
+                                        <div class="row">
+                                            <div class="col-md-3 col-6">
+                                                <div class="time">
+                                                    <p id="days">00</p>
+                                                    <span>Ngày</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3 col-6">
+                                                <div class="time">
+                                                    <p id="hours">00</p>
+                                                    <span>Giờ</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3 col-6">
+                                                <div class="time">
+                                                    <p id="minutes">00</p>
+                                                    <span>Phút</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3 col-6">
+                                                <div class="time">
+                                                    <p id="seconds">00</p>
+                                                    <span>Giây</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <section id="event" class="py-5">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-md-9 col-12 text-center">
+                                <div class="section-title">
+                                    <h1 class="fw-bold mb-2">Sự Kiện Cưới</h1>
+                                </div>
+                                <p class="">Tình yêu không làm cho thế giới quay tròn. Tình yêu là những gì làm cho
+                                    chuyến đi đáng giá.</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-3 col-md-6 col-12 mb-3">
+                                <div class="card">
+                                    <img src="./assets/images/event_1.jpeg" class="card-img-top" alt="Sự kiện">
+                                    <div class="card-body text-center">
+                                        <p class="card-title mb-2">LỄ ĂN HỎI</p>
+                                        <p class="card-subtitle mb-2">15:00 18/05/2024</p>
+                                        <p class="card-text">KDC Kiệt Đoài - P. Văn An - Tp.Chí Linh - Tỉnh Hải Dương
+                                        </p>
+                                        <a href="#" class="btn btn-primary">Xem bản đồ</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 col-12 mb-3">
+                                <div class="card">
+                                    <img src="./assets/images/event_2.jpeg" class="card-img-top" alt="Sự kiện">
+                                    <div class="card-body text-center">
+                                        <p class="card-title mb-2">LỄ ĂN HỎI</p>
+                                        <p class="card-subtitle mb-2">15:00 18/05/2024</p>
+                                        <p class="card-text">KDC Kiệt Đoài - P. Văn An - Tp.Chí Linh - Tỉnh Hải Dương
+                                        </p>
+                                        <a href="#" class="btn btn-primary">Xem bản đồ</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 col-12 mb-3">
+                                <div class="card">
+                                    <img src="./assets/images/event_3.jpeg" class="card-img-top" alt="Sự kiện">
+                                    <div class="card-body text-center">
+                                        <p class="card-title mb-2">LỄ ĂN HỎI</p>
+                                        <p class="card-subtitle mb-2">15:00 18/05/2024</p>
+                                        <p class="card-text">KDC Kiệt Đoài - P. Văn An - Tp.Chí Linh - Tỉnh Hải Dương
+                                        </p>
+                                        <a href="#" class="btn btn-primary">Xem bản đồ</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 col-12 mb-3">
+                                <div class="card">
+                                    <img src="./assets/images/event_4.jpeg" class="card-img-top" alt="Sự kiện">
+                                    <div class="card-body text-center">
+                                        <p class="card-title mb-2">LỄ ĂN HỎI</p>
+                                        <p class="card-subtitle mb-2">15:00 18/05/2024</p>
+                                        <p class="card-text">KDC Kiệt Đoài - P. Văn An - Tp.Chí Linh - Tỉnh Hải Dương
+                                        </p>
+                                        <a href="#" class="btn btn-primary">Xem bản đồ</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <section id="space">
+                    <div class="overlay">
+                        <div class="container">
+                            <div class="row justify-content-center align-items-center">
+                                <div class="col-lg-9 col-12">
+                                    <span class="text-light">We are going to...</span>
+                                    <h1 class="text-light" style="font-size: 5rem !important;"> Celebrate Our Love</h1>
+                                    <h1 class="text-light">08 Dec 2024</h1>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <section id="album" class="py-5">
+                    <!-- Gallery -->
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-md-9 col-12 text-center">
+                                <div class="section-title">
+                                    <h1 class="fw-bold mb-2">Album Hình Cưới</h1>
+                                </div>
+                                <p class="">Được ai đó yêu sâu sắc sẽ mang lại cho bạn sức mạnh, trong khi yêu ai đó sâu
+                                    sắc sẽ cho bạn dũng khí.</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
+
+                                <a href="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(73).webp"
+                                    data-fancybox="gallery" data-caption="Ngân hàng ABC" class="text-center">
+                                    <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(73).webp"
+                                        width="50%" class="w-100 shadow-1-strong rounded mb-4" />
+                                </a>
+                                <a href="https://mdbcdn.b-cdn.net/img/Photos/Vertical/mountain1.webp"
+                                    data-fancybox="gallery" data-caption="Ngân hàng ABC" class="text-center">
+                                    <img src="https://mdbcdn.b-cdn.net/img/Photos/Vertical/mountain1.webp" width="50%"
+                                        class="w-100 shadow-1-strong rounded mb-4" />
+                                </a>
+                            </div>
+
+                            <div class="col-lg-4 mb-4 mb-lg-0">
+                                <a href="https://mdbcdn.b-cdn.net/img/Photos/Vertical/mountain2.webp"
+                                    data-fancybox="gallery" data-caption="Ngân hàng ABC" class="text-center">
+                                    <img src="https://mdbcdn.b-cdn.net/img/Photos/Vertical/mountain2.webp" width="50%"
+                                        class="w-100 shadow-1-strong rounded mb-4" />
+                                </a>
+                                <a href="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(73).webp"
+                                    data-fancybox="gallery" data-caption="Ngân hàng ABC" class="text-center">
+                                    <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(73).webp"
+                                        width="50%" class="w-100 shadow-1-strong rounded mb-4" />
+                                </a>
+                            </div>
+
+                            <div class="col-lg-4 mb-4 mb-lg-0">
+                                <a href="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(18).webp"
+                                    data-fancybox="gallery" data-caption="Ngân hàng ABC" class="text-center">
+                                    <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(18).webp"
+                                        width="50%" class="w-100 shadow-1-strong rounded mb-4" />
+                                </a>
+                                <a href="https://mdbcdn.b-cdn.net/img/Photos/Vertical/mountain3.webp"
+                                    data-fancybox="gallery" data-caption="Ngân hàng ABC" class="text-center">
+                                    <img src="https://mdbcdn.b-cdn.net/img/Photos/Vertical/mountain3.webp" width="50%"
+                                        class="w-100 shadow-1-strong rounded mb-4" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Gallery -->
+                </section>
+
+                <section id="mung-cuoi" class="py-5">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-md-9 col-12 text-center">
+                                <div class="section-title">
+                                    <h1 class="fw-bold mb-2">Hộp Mừng Cưới</h1>
+
+                                </div>
+                            </div>
+                            <div class="row justify-content-center gap-3">
+                                <div class="col-md-4 col-12 card-bank">
+                                    <div class="d-flex flex-column align-items-center justify-content-center">
+                                        <h3 class="fw-bold py-3">Mừng cưới chú
+                                            rể</h3>
+                                        <a href="./assets/images/bank_1.jpg" data-fancybox="gallery"
+                                            data-caption="Ngân hàng ABC" class="text-center">
+                                            <img src=" ./assets/images/bank_1.jpg" width="50%" class="img-fluid" />
+                                        </a>
+                                        <span>Ngân hàng: <span class="fw-bold">ABC</span></span>
+                                        <span>Tên tài khoản: <span class="fw-bold">ABC</span></span>
+                                        <span>Số tài khoản: <span class="fw-bold">ABC</span></span>
+                                        <span>Chi nhánh: <span class="fw-bold">ABC</span></span>
+                                    </div>
+
+
+
+                                </div>
+                                <div class="col-md-4 col-12 card-bank">
+                                    <div class="d-flex flex-column align-items-center justify-content-center">
+                                        <h3 class="fw-bold py-3">Mừng cưới cô
+                                            dâu</h3>
+                                        <a href="./assets/images/bank_2.jpg" data-fancybox="gallery"
+                                            data-caption="Ngân hàng XYZ" class="text-center">
+                                            <img src=" ./assets/images/bank_2.jpg" width="50%" class="img-fluid" />
+                                        </a>
+                                        <span>Ngân hàng: <span class="fw-bold">ABC</span></span>
+                                        <span>Tên tài khoản: <span class="fw-bold">ABC</span></span>
+                                        <span>Số tài khoản: <span class="fw-bold">ABC</span></span>
+                                        <span>Chi nhánh: <span class="fw-bold">ABC</span></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
             </div>
+            <footer class="site-footer footer-style-1">
+                <div class="inner">
+                    <div class="couple-pic">
+                        <img src="./assets/images/ee.jpeg" alt="Thiệp cưới Quốc Kiệt &amp; Tuyết Anh <3">
+                    </div>
+                    <h2>Thank you!</h2>
+                </div>
+            </footer>
+
 
 
 
@@ -421,8 +663,8 @@
 
 
 
-
-    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+    <div class="offcanvas offcanvas-end opacity-50" tabindex="-1" id="offcanvasRight"
+        aria-labelledby="offcanvasRightLabel">
         <div class="offcanvas-header border-bottom">
             <h2 class="offcanvas-title" id="offcanvasRightLabel">Quốc Kiệt <i class="fa-regular fa-heart px-2"
                     style="color: var(--color-pink-dark);"></i>
@@ -434,14 +676,14 @@
                 <li><a href="#couple" class="text-decoration-none nav-link mb-3">Cặp đôi</a></li>
                 <li><a href="#our-story" class="text-decoration-none nav-link mb-3">Chuyện tình yêu </a>
                 </li>
-                <li><a href="#album" class="text-decoration-none nav-link mb-3">Album hình cưới</a></li>
                 <li><a href="#event" class="text-decoration-none nav-link mb-3">Sự kiện cưới</a></li>
+                <li><a href="#album" class="text-decoration-none nav-link mb-3">Album hình cưới</a></li>
                 <li><a href="#mung-cuoi" class="text-decoration-none nav-link mb-3">Mừng cưới</a></li>
             </ul>
         </div>
     </div>
     <!-- Scripts -->
-    <!-- <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script> -->
+
     <script src="./assets/libs/swiper/swiper-bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
         integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="

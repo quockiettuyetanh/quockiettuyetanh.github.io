@@ -51,3 +51,28 @@ document.addEventListener("DOMContentLoaded", function () {
 
   setInterval(createHeart, 2000);
 });
+
+var countDate = new Date("Dec 8, 2024 00:00:00").getTime();
+
+function addLeadingZero(number) {
+  return number < 10 ? "0" + number : number;
+}
+
+var x = setInterval(function () {
+  var now = new Date().getTime();
+  var distance = countDate - now;
+
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  document.getElementById("days").innerHTML = addLeadingZero(days);
+  document.getElementById("hours").innerHTML = addLeadingZero(hours);
+  document.getElementById("minutes").innerHTML = addLeadingZero(minutes);
+  document.getElementById("seconds").innerHTML = addLeadingZero(seconds);
+}, 1000);
+
+Fancybox.bind("[data-fancybox]", {
+  // Your custom options
+});

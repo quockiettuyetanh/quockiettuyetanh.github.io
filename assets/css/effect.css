@@ -83,7 +83,7 @@
 
     100% {
         transform: translateY(100vh) rotate(90deg) rotateZ(-10deg) translateX(0px);
-        opacity: 0;
+        opacity: 1;
     }
 }
 
