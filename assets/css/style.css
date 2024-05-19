@@ -549,8 +549,21 @@ i.mobile {
     object-position: center center;
 }
 
-#mung-cuoi {
+
+
+#loi-chuc {
     background: url('../images/bg.png') center center;
+    height: auto;
+    padding: 60px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#mung-cuoi {
+    background-color: #F2EDED;
+    /* background: url('../images/bg.png') center center; */
     height: auto;
     padding: 60px 0;
     display: flex;
@@ -709,4 +722,13 @@ i.mobile {
         width: 300px;
         height: 276px;
     }
+}
+
+
+#show_loichuc {
+    background-color: #ffff;
+    overflow-y: auto;
+    height: 450px;
+    padding: 10px;
+    border: 3px dashed var(--color-pink);
 }

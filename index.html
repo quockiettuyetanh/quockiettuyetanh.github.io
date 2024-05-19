@@ -22,6 +22,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 </head>
 
 <body>
@@ -547,10 +548,12 @@
                         <div class="row justify-content-center">
                             <div class="col-md-9 col-12 text-center">
                                 <div class="section-title">
-                                    <h1 class="fw-bold mb-2">Album Hình Cưới</h1>
+                                    <h1 class="fw-bold mb-1">Album Hình Cưới</h1>
+                                    <p class="">Được ai đó yêu sâu sắc sẽ mang lại cho bạn sức mạnh, trong khi yêu ai đó
+                                        sâu
+                                        sắc sẽ cho bạn dũng khí.</p>
                                 </div>
-                                <p class="">Được ai đó yêu sâu sắc sẽ mang lại cho bạn sức mạnh, trong khi yêu ai đó sâu
-                                    sắc sẽ cho bạn dũng khí.</p>
+
                             </div>
                         </div>
                         <div class="row">
@@ -599,6 +602,51 @@
                     <!-- Gallery -->
                 </section>
 
+                <section id="loi-chuc">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-md-9 col-12 text-center">
+                                <div class="section-title">
+                                    <h1 class="fw-bold mb-2">Sổ Lưu Bút</h1>
+                                    <p class="">Cảm ơn yêu thương rất nhiều vì đã gửi những lời chúc mừng tốt đẹp nhất
+                                        đến
+                                        đám cưới của chúng mình!</p>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="row pb-5 justify-content-center">
+                            <div class="col-lg-5 col-12 mb-2">
+                                <div id="form-container">
+                                    <div class="row">
+                                        <div class="col-md-6 col-12"><input type="text" id="name"
+                                                class="form-control mb-3 shadow-none" placeholder="Họ tên" />
+                                        </div>
+                                        <div class="col-md-6 col-12"><input type="number" id="phone"
+                                                class="form-control mb-3 shadow-none" placeholder="Số điện thoại" />
+                                        </div>
+                                        <div class="col-12 mb-3">
+                                            <textarea id="loichuc" class="form-control shadow-none" cols="30" rows="10"
+                                                placeholder="Lời nhắn"></textarea>
+                                        </div>
+                                        <div id="button-container">
+                                            <button id="submit" class="btn btn-primary d-flex align-items-center">
+                                                Gửi lời chúc <i class="fa-solid fa-arrow-right-long px-2"></i></button>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="col-lg-5 col-12 mb-2" id="show_loichuc">
+
+
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </section>
                 <section id="mung-cuoi" class="py-5">
                     <div class="container">
                         <div class="row justify-content-center">
@@ -645,6 +693,9 @@
 
                     </div>
                 </section>
+
+
+
             </div>
             <footer class="site-footer footer-style-1">
                 <div class="inner">
@@ -688,10 +739,95 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
         integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script defer src="./assets/libs/animate/wow.min.js"></script>
-    <script defer src="./assets/js/scripts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="./assets/libs/animate/wow.min.js"></script>
+    <script src="./assets/js/scripts.js"></script>
+    <script src="./assets/libs/bootstrap5/js/bootstrap.bundle.min.js"></script>
 
-    <script defer src="./assets/libs/bootstrap5/js/bootstrap.bundle.min.js"></script>
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyB29NNeQhb4hkPt5pmRA8tfBt1fOUAGt3g",
+            authDomain: "quockiettuyetanhwedding.firebaseapp.com",
+            databaseURL: "https://quockiettuyetanhwedding-default-rtdb.firebaseio.com",
+            projectId: "quockiettuyetanhwedding",
+            storageBucket: "quockiettuyetanhwedding.appspot.com",
+            messagingSenderId: "1071769442607",
+            appId: "1:1071769442607:web:a94a3cdeed610f3500e9da"
+        };
+
+        const app = initializeApp(firebaseConfig);
+
+        import { getDatabase, ref, child, get, set, update, remove } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
+
+        const db = getDatabase();
+
+        let phone = document.getElementById('phone');
+        let name = document.getElementById('name');
+        let loichuc = document.getElementById('loichuc');
+
+        let addBtn = document.getElementById('submit');
+
+        function addData() {
+            set(ref(db, 'LoiChuc/' + phone.value), {
+                hoten: name.value,
+                dienthoai: phone.value,
+                loichuc: loichuc.value
+            })
+                .then(() => {
+                    Toastify({
+                        text: "Đã gửi lời chúc đến Cô Dâu & Chú Rể",
+                        backgroundColor: "linear-gradient(to right, #96c93d, #96c93d)",
+                        duration: 3000
+                    }).showToast();
+                    getAllData('LoiChuc');
+                })
+                .catch((error) => {
+                    alert("Lỗi");
+                    console.log(error);
+                })
+        }
+
+        function getAllData(location) {
+            const dataRef = ref(db, location);
+
+            get(dataRef)
+                .then((snapshot) => {
+                    if (snapshot.exists()) {
+                        const data = snapshot.val();
+                        console.log("Data retrieved:", data);
+
+                        const showLoichucElement = document.getElementById('show_loichuc');
+                        showLoichucElement.innerHTML = ""; // Clear previous content
+
+                        for (const key in data) {
+                            if (Object.hasOwnProperty.call(data, key)) {
+                                const item = data[key];
+                                const html = `
+                                <div class="d-flex flex-column mb-2">
+                                    <span class="fw-bold">${item.hoten}</span>
+                                    <p>${item.loichuc}.</p>
+                                </div>`;
+                                showLoichucElement.insertAdjacentHTML('beforeend', html);
+                            }
+                        }
+                    } else {
+                        console.log("Không data trả về");
+                    }
+                })
+                .catch((error) => {
+                    console.error("Lỗi:", error);
+                });
+        }
+        getAllData('LoiChuc');
+
+
+        // console.log(getAllData);
+        addBtn.addEventListener('click', addData);
+    </script>
+
+
 
 </body>
 
