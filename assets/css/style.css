@@ -561,7 +561,7 @@ i.mobile {
 }
 
 
-#mung-cuoi {
+#donate {
     background-color: #F2EDED;
     /* background: url('../images/bg.png') center center; */
     height: auto;
@@ -572,7 +572,7 @@ i.mobile {
 }
 
 
-#mung-cuoi .card-bank {
+#donate .card-bank {
     background-color: white;
     padding: 20px;
     border-radius: 10px;
@@ -581,7 +581,7 @@ i.mobile {
 }
 
 
-#mung-cuoi .card-bank:hover {
+#donate .card-bank:hover {
     box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
 }
 
@@ -731,4 +731,9 @@ i.mobile {
     height: 450px;
     padding: 10px;
     border: 3px dashed var(--color-pink);
+}
+
+.error {
+    margin-top: 5px;
+    color: red;
 }

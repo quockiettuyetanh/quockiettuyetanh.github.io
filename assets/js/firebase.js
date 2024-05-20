@@ -1,28 +1,99 @@
-// var firebaseConfig = {
-//   apiKey: "AIzaSyBpCguTPbaJ9_G6zpEi60CV3vrYZ44Mn2Q",
-//   authDomain: "quockiettuyetanh.firebaseapp.com",
-//   projectId: "quockiettuyetanh",
-//   storageBucket: "quockiettuyetanh.appspot.com",
-//   messagingSenderId: "910658884623",
-//   appId: "1:910658884623:web:6cdb8dab38bae9afd87f7a",
-// };
-// firebase.initializeApp(firebaseConfig);
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+import {
+  getDatabase,
+  ref,
+  set,
+  get,
+} from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
 
-// var database = firebase.database();
+const firebaseConfig = {
+  apiKey: "AIzaSyB29NNeQhb4hkPt5pmRA8tfBt1fOUAGt3g",
+  authDomain: "quockiettuyetanhwedding.firebaseapp.com",
+  databaseURL: "https://quockiettuyetanhwedding-default-rtdb.firebaseio.com",
+  projectId: "quockiettuyetanhwedding",
+  storageBucket: "quockiettuyetanhwedding.appspot.com",
+  messagingSenderId: "1071769442607",
+  appId: "1:1071769442607:web:a94a3cdeed610f3500e9da",
+};
 
-// function save() {
-//   var email = document.getElementById("email").value;
-//   var name = document.getElementById("name").value;
-//   var phone = document.getElementById("phone").value;
-//   var content = document.getElementById("content").value;
+const app = initializeApp(firebaseConfig);
+const db = getDatabase();
 
-//   database.ref("email/" + email).set({
-//     email: email,
-//     name: name,
-//     phone: phone,
-//     content: content,
-//   });
+window.addData = function addData(name, phone, loichuc) {
+  set(ref(db, "LoiChuc/" + phone), {
+    hoten: name,
+    dienthoai: phone,
+    loichuc: loichuc,
+  })
+    .then(() => {
+      Swal.fire({
+        title: "Thành công",
+        text: "Đã gửi lời chúc đến Cô Dâu & Chú Rể",
+        icon: "success",
+      });
 
-//   alert("Đã lưu");
-//   console.log("Đã lưu");
-// }
+      // $.toast({
+      //   text: "Đã gửi lời chúc đến Cô dâu & Chú rể",
+      //   heading: "Đã gửi thành công",
+      //   icon: "success",
+      //   showHideTransition: "fade",
+      //   allowToastClose: true,
+      //   hideAfter: 3000,
+      //   stack: false,
+      //   position: "top-right",
+      //   textAlign: "left",
+      //   loader: true,
+      //   loaderBg: "#9EC600",
+      // });
+
+      $("#name").val("");
+      $("#phone").val("");
+      $("#loichuc").val("");
+
+      $("#name").focus();
+
+      getAllData("LoiChuc");
+    })
+    .catch((error) => {
+      Swal.fire({
+        title: "Lỗi",
+        text: "Đã xảy ra lỗi khi gửi lời chúc",
+        icon: "error",
+      });
+      console.log(error);
+    });
+};
+
+function getAllData(location) {
+  const dataRef = ref(db, location);
+
+  get(dataRef)
+    .then((snapshot) => {
+      if (snapshot.exists()) {
+        const data = snapshot.val();
+        console.log("Data retrieved:", data);
+
+        const showLoichucElement = document.getElementById("show_loichuc");
+        showLoichucElement.innerHTML = ""; // Clear previous content
+
+        for (const key in data) {
+          if (Object.hasOwnProperty.call(data, key)) {
+            const item = data[key];
+            const html = `
+            <div class="d-flex flex-column mb-2">
+            <span class="fw-bold">${item.hoten}</span>
+            <p>${item.loichuc}.</p>
+            </div>`;
+            showLoichucElement.insertAdjacentHTML("beforeend", html);
+          }
+        }
+      } else {
+        console.log("Không data trả về");
+      }
+    })
+    .catch((error) => {
+      console.error("Lỗi:", error);
+    });
+}
+
+getAllData("LoiChuc");

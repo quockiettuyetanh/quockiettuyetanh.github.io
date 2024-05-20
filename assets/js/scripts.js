@@ -76,3 +76,52 @@ var x = setInterval(function () {
 Fancybox.bind("[data-fancybox]", {
   // Your custom options
 });
+
+$(document).ready(function () {
+  $(".btn-menu-open").click(function () {
+    $("#menu-access").addClass("opened");
+    $(".btn-menu-open").hide();
+    $(".btn-menu-close").show();
+    $(".list-menu-icon").css("opacity", "1");
+  });
+
+  $(".btn-menu-close").click(function () {
+    $("#menu-access").removeClass("opened");
+    $(".btn-menu-close").hide();
+    $(".btn-menu-open").show();
+    $(".list-menu-icon").css("opacity", "0");
+  });
+});
+
+$(document).ready(function () {
+  var liIndex = 0;
+
+  setInterval(function () {
+    var li = $("#menu-access li").eq(liIndex);
+
+    li.find(".tooltiptext").css("visibility", "visible");
+
+    if (!li.hasClass("shake_effect")) {
+      li.addClass("shake_effect");
+
+      setTimeout(function () {
+        li.removeClass("shake_effect");
+        li.find(".tooltiptext").css("visibility", "hidden");
+      }, 4000);
+    }
+
+    liIndex++;
+    if (liIndex >= $("#menu-access li").length) {
+      liIndex = 0;
+    }
+  }, 6000);
+
+  $("#menu-access li").hover(
+    function () {
+      $(this).find(".tooltiptext").css("visibility", "visible");
+    },
+    function () {
+      $(this).find(".tooltiptext").css("visibility", "hidden");
+    }
+  );
+});
