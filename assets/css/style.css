@@ -737,3 +737,7 @@ i.mobile {
     margin-top: 5px;
     color: red;
 }
+
+.nav-link:hover {
+    color: var(--color-pink) !important;
+}
