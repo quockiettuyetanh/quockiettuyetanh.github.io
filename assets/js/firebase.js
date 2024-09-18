@@ -32,20 +32,6 @@ window.addData = function addData(name, phone, loichuc) {
         icon: "success",
       });
 
-      // $.toast({
-      //   text: "Đã gửi lời chúc đến Cô dâu & Chú rể",
-      //   heading: "Đã gửi thành công",
-      //   icon: "success",
-      //   showHideTransition: "fade",
-      //   allowToastClose: true,
-      //   hideAfter: 3000,
-      //   stack: false,
-      //   position: "top-right",
-      //   textAlign: "left",
-      //   loader: true,
-      //   loaderBg: "#9EC600",
-      // });
-
       $("#name").val("");
       $("#phone").val("");
       $("#loichuc").val("");

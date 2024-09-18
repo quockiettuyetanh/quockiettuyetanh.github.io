@@ -125,3 +125,20 @@ $(document).ready(function () {
     }
   );
 });
+
+let isPlaying = false;
+
+function toggleAudio() {
+  const audio = document.getElementById("myAudio");
+  const button = document.getElementById("toggleAudio");
+
+  if (isPlaying) {
+    audio.pause();
+    button.innerHTML = "🔇"; // Change icon to muted
+  } else {
+    audio.play();
+    button.innerHTML = "🔊"; // Change icon to unmuted
+  }
+
+  isPlaying = !isPlaying;
+}

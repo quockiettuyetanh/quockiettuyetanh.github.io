@@ -1,824 +1,1039 @@
 <!DOCTYPE html>
 <html lang="en">
-
-
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Quốc Kiệt & Tuyết Anh</title>
-    <link rel="stylesheet" href="./assets/libs/bootstrap5/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" /> -->
-    <link rel="stylesheet" href="./assets/libs/swiper/swiper-bundle.min.css">
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="stylesheet" href="./assets/css/effect.css">
-    <link rel="stylesheet" href="./assets/css/floating.css">
-    <!-- <link rel="stylesheet" href="./assets/libs/animate/animate.min.css"> -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-    <link rel="icon" href="assets/images/favi.png">
-    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
-    <link rel="stylesheet" href="assets/libs/sweetalert2/sweetalert2.min.css">
-    <link href="assets/libs/jquery-toast-plugin/jquery.toast.min.css" rel="stylesheet">
-</head>
 
-<body>
+    <link
+      rel="stylesheet"
+      href="./assets/libs/bootstrap5/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" /> -->
+    <link rel="stylesheet" href="./assets/libs/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/effect.css" />
+    <link rel="stylesheet" href="./assets/css/floating.css" />
+    <!-- <link rel="stylesheet" href="./assets/libs/animate/animate.min.css"> -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link rel="icon" href="assets/images/favi.png" />
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
+    <link rel="stylesheet" href="assets/libs/sweetalert2/sweetalert2.min.css" />
+    <link
+      href="assets/libs/jquery-toast-plugin/jquery.toast.min.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <audio id="myAudio" autoplay>
+      <source src="./assets/audio/motdoi.mp3" type="audio/mpeg" />
+      Your browser does not support the audio element.
+    </audio>
+
+    <button id="toggleAudio" class="floating-btn" onclick="toggleAudio()">
+      🔊
+    </button>
     <div class="loading-screen">
-        <div class="heart_loading"></div>
+      <div class="heart_loading"></div>
     </div>
     <div id="heart-fall">
-        <div class="heart"></div>
+      <div class="heart"></div>
     </div>
-
 
     <div class="main-screen">
-        <div class="page-wapper">
-            <header class="container-fluid px-0">
-                <div class="top-bar py-4">
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-9 text-center">
-                                <div class="d-flex align-items-center gap-2 justify-content-center">
-                                    <h1>Quốc Kiệt</h1>
-                                    <i class="fa-regular fa-heart px-2"></i>
-                                    <h1>Tuyết Anh</h1>
-                                </div>
-                                <span class="divine-text">Just Married</span>
-                            </div>
-                        </div>
-                    </div>
-
+      <div class="page-wapper">
+        <header class="container-fluid px-0">
+          <div class="top-bar py-4">
+            <div class="container">
+              <div class="row justify-content-center">
+                <div class="col-9 text-center">
+                  <div
+                    class="d-flex align-items-center gap-2 justify-content-center"
+                  >
+                    <h1>Quốc Kiệt</h1>
+                    <i class="fa-regular fa-heart px-2"></i>
+                    <h1>Tuyết Anh</h1>
+                  </div>
+                  <span class="divine-text">Just Married</span>
                 </div>
-                <div class="header-bottom py-3 d-lg-block d-none">
-                    <div class="container px-0">
-                        <div class="row justify-content-center">
-                            <div class="col-9">
-                                <ul
-                                    class="d-flex list-unstyled gap-5 mx-auto justify-content-center align-items-center mb-0">
-                                    <li><a href="#couple" class="text-decoration-none nav-link">Cặp đôi</a></li>
-                                    <li><a href="#our-story" class="text-decoration-none nav-link">Chuyện tình yêu </a>
-                                    </li>
-                                    <li><a href="#event" class="text-decoration-none nav-link">Sự kiện cưới</a></li>
-                                    <li><a href="#album" class="text-decoration-none nav-link">Album hình cưới</a></li>
-                                    <li><a href="#mung-cuoi" class="text-decoration-none nav-link">Mừng cưới</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
+              </div>
+            </div>
+          </div>
+          <div class="header-bottom py-3 d-lg-block d-none">
+            <div class="container px-0">
+              <div class="row justify-content-center">
+                <div class="col-9">
+                  <ul
+                    class="d-flex list-unstyled gap-5 mx-auto justify-content-center align-items-center mb-0"
+                  >
+                    <li>
+                      <a href="#couple" class="text-decoration-none nav-link"
+                        >Cặp đôi</a
+                      >
+                    </li>
+                    <li>
+                      <a href="#our-story" class="text-decoration-none nav-link"
+                        >Chuyện tình yêu
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#event" class="text-decoration-none nav-link"
+                        >Sự kiện cưới</a
+                      >
+                    </li>
+                    <li>
+                      <a href="#album" class="text-decoration-none nav-link"
+                        >Album hình cưới</a
+                      >
+                    </li>
+                    <li>
+                      <a href="#mung-cuoi" class="text-decoration-none nav-link"
+                        >Mừng cưới</a
+                      >
+                    </li>
+                  </ul>
                 </div>
-                <div class="header-bottom d-lg-none d-block">
-                    <div class="container">
-                        <div class="row justify-content-between align-items-center">
-                            <div class="col-9">
-                                <div class="d-flex gap-1 align-items-center p-3">
-                                    <span class="name_groom_mobile">QK</span>
-                                    <i class="fa-regular fa-heart px-2 mobile"></i>
-                                    <span class="name_bride_mobile">TA</span>
-                                </div>
-
-                            </div>
-                            <div class="col-3 text-center">
-                                <button class="btn shadow-none rounded-0 px-3 btn-mobile" type="button"
-                                    data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
-                                    aria-controls="offcanvasRight">
-                                    <i class="fa-solid fa-bars"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
+              </div>
+            </div>
+          </div>
+          <div class="header-bottom d-lg-none d-block">
+            <div class="container">
+              <div class="row justify-content-between align-items-center">
+                <div class="col-9">
+                  <div class="d-flex gap-1 align-items-center p-3">
+                    <span class="name_groom_mobile">QK</span>
+                    <i class="fa-regular fa-heart px-2 mobile"></i>
+                    <span class="name_bride_mobile">TA</span>
+                  </div>
                 </div>
-            </header>
-            <div id="content">
-                <!-- slider -->
-                <section id="slider">
-                    <div class="swiper-container">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide"><img src="assets/images/slider_1.jpg" alt=""
-                                    class="d-block w-100">
-                                <div class="overlay">
-                                    <div class="d-inline-flex flex-column">
-                                        <div class="d-flex gap-3 align-items-center flex-lg-row flex-column">
-                                            <span class="name_groom">Quốc Kiệt</span>
-                                            <i class="fa-regular fa-heart px-3"></i>
-                                            <span class="name_bride">Tuyết Anh</span>
-                                        </div>
-                                        <span class="divine-text mt-3">08/12/2024</span>
-                                    </div>
-
-
-                                </div>
-                            </div>
-                            <div class="swiper-slide"><img src="assets/images/slider_2.jpg" alt=""
-                                    class="d-block w-100">
-                                <div class="overlay">
-                                    <div class="d-inline-flex flex-column">
-                                        <div class="d-flex gap-3 align-items-center flex-lg-row flex-column">
-                                            <span class="name_groom">Quốc Kiệt</span>
-                                            <i class="fa-regular fa-heart px-3"></i>
-                                            <span class="name_bride">Tuyết Anh</span>
-                                        </div>
-                                        <span class="divine-text mt-3">08/12/2024</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="swiper-pagination"></div>
-
-                        <div class="swiper-button-next d-none"></div>
-                        <div class="swiper-button-prev d-none"></div>
+                <div class="col-3 text-center">
+                  <button
+                    class="btn shadow-none rounded-0 px-3 btn-mobile"
+                    type="button"
+                    data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasRight"
+                    aria-controls="offcanvasRight"
+                  >
+                    <i class="fa-solid fa-bars"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </header>
+        <div id="content">
+          <!-- slider -->
+          <section id="slider">
+            <div class="swiper-container">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img
+                    src="assets/images/slider1.jpg"
+                    alt=""
+                    class="d-block w-100"
+                  />
+                  <div class="overlay">
+                    <div class="d-inline-flex flex-column">
+                      <div
+                        class="d-flex gap-3 align-items-center flex-lg-row flex-column"
+                      >
+                        <span class="name_groom">Quốc Kiệt</span>
+                        <i class="fa-regular fa-heart px-3"></i>
+                        <span class="name_bride">Tuyết Anh</span>
+                      </div>
+                      <span class="divine-text mt-3">08/12/2024</span>
                     </div>
-                </section>
-                <!-- end slider -->
-                <div class="gap"></div>
-                <section id="couple" class="py-1">
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-md-9 col-12 text-center">
-                                <div class="section-title animate__animated animate__fadeInDown">
-                                    <h1 class="fw-bold mb-2">Cô dâu & Chú rể</h1>
-                                    <p>Tình yêu là điều kiện trong đó hạnh phúc của người khác là điều cần thiết cho
-                                        chính
-                                        bạn.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row justify-content-center">
-                            <div class="col-lg-9 col-12">
-                                <div id="couple-area">
-                                    <div class="icon-box">
-                                        <i class="fa-solid fa-heart heart-2"></i>
-                                    </div>
-                                    <div class="left-img"></div>
-                                    <div class="right-img"></div>
-                                    <div class="row align-items-center mb-2">
-                                        <div class="col-md-6 col-12 mb-2">
-                                            <div class="name_groom mb-2">
-                                                <h2>Võ Quốc Kiệt</h2>
-                                            </div>
-                                            <div class="parent_info mb-2">
-                                                <div class="d-flex">
-                                                    <p class="mb-0">Con của Cha:</p>
-                                                    <p class="fw-bold px-2 text-uppercase mb-1">Trần Văn Nhỏ</p>
-                                                </div>
-                                                <div class="d-flex">
-                                                    <p class="mb-0">Con của Mẹ:</p>
-                                                    <p class="fw-bold px-2 text-uppercase mb-1">Nguyễn Thị Nhỏ</p>
-                                                </div>
-                                            </div>
-                                            <div class="groom_info">
-                                                <p>Một chàng trai đến từ Long An, hiện đang sinh sống và làm việc tại
-                                                    Sài
-                                                    Gòn.
-                                                    Sống hướng ngoại, nhanh nhẹn, hoạt bát, thích ngăn chặn và dập tắt
-                                                    những
-                                                    mơ
-                                                    mộng của vợ mình.</p>
-                                            </div>
-                                            <a href="https://www.facebook.com/" class="icon_social" target="_blank"><i
-                                                    class="fa-brands fa-facebook">
-                                                </i>
-                                            </a>
-
-                                        </div>
-                                        <div class="col-md-6 col-12 mb-2 img-groom">
-                                            <img src="assets/images/groom.jpeg" alt="" width="100%">
-                                        </div>
-                                    </div>
-                                    <div class="row align-items-center flex-row-reverse mb-2">
-                                        <div class="col-md-6 col-12 mb-2">
-                                            <div class="name_bride mb-2">
-                                                <h2>Nguyễn Thị Tuyết Anh</h2>
-                                            </div>
-                                            <div class="parent_info mb-2">
-                                                <div class="d-flex">
-                                                    <p class="mb-0">Con của Cha:</p>
-                                                    <p class="fw-bold px-2 text-uppercase mb-1">Trần Văn Nhỏ</p>
-                                                </div>
-                                                <div class="d-flex">
-                                                    <p class="mb-0">Con của Mẹ:</p>
-                                                    <p class="fw-bold px-2 text-uppercase mb-1">Nguyễn Thị Nhỏ</p>
-                                                </div>
-                                            </div>
-                                            <div class="bride_info">
-                                                <p>Một chàng trai đến từ Long An, hiện đang sinh sống và làm việc tại
-                                                    Sài
-                                                    Gòn.
-                                                    Sống hướng ngoại, nhanh nhẹn, hoạt bát, thích ngăn chặn và dập tắt
-                                                    những
-                                                    mơ
-                                                    mộng của vợ mình.</p>
-                                            </div>
-                                            <a href="https://www.facebook.com/" class="icon_social" target="_blank"><i
-                                                    class="fa-brands fa-facebook">
-                                                </i>
-                                            </a>
-                                        </div>
-                                        <div class="col-md-6 col-12 mb-2 img-bride">
-                                            <img src="assets/images/bride.jpeg" alt="" width="100%">
-                                        </div>
-
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="assets/images/slider2.jpg"
+                    alt=""
+                    class="d-block w-100"
+                  />
+                  <div class="overlay">
+                    <div class="d-inline-flex flex-column">
+                      <div
+                        class="d-flex gap-3 align-items-center flex-lg-row flex-column"
+                      >
+                        <span class="name_groom">Quốc Kiệt</span>
+                        <i class="fa-regular fa-heart px-3"></i>
+                        <span class="name_bride">Tuyết Anh</span>
+                      </div>
+                      <span class="divine-text mt-3">08/12/2024</span>
                     </div>
-                </section>
-                <div class="gap"></div>
-                <section id="accessibilities">
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-md-9 col-12 text-center">
-                                <a href="#couple" class="btn btn-primary rounded-0 p-3 fs-4 mb-2">
-                                    <i class="fa-solid fa-signature px-2"></i>Chúng em</a>
-                                <a href="#event" class="btn btn-primary rounded-0 p-3 fs-4 mb-2">
-                                    <i class="fa-solid fa-calendar-days px-2"></i>Sự kiện của buổi tiệc</a>
-                                <a href="#mung-cuoi" class="btn btn-primary rounded-0 p-3 fs-4 mb-2">
-                                    <i class="fa-solid fa-sack-dollar px-2"></i>Mừng cưới</a>
-                            </div>
-                        </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper-pagination"></div>
+
+              <div class="swiper-button-next d-none"></div>
+              <div class="swiper-button-prev d-none"></div>
+            </div>
+          </section>
+          <!-- end slider -->
+          <div class="gap"></div>
+          <section id="couple" class="py-1">
+            <div class="container">
+              <div class="row justify-content-center">
+                <div class="col-md-9 col-12 text-center">
+                  <div
+                    class="section-title animate__animated animate__fadeInDown"
+                  >
+                    <h1 class="fw-bold mb-2">Cô dâu & Chú rể</h1>
+                    <p>
+                      Tình yêu là điều kiện trong đó hạnh phúc của người khác là
+                      điều cần thiết cho chính bạn.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="row justify-content-center">
+                <div class="col-lg-9 col-12">
+                  <div id="couple-area">
+                    <div class="icon-box">
+                      <i class="fa-solid fa-heart heart-2"></i>
                     </div>
-
-                </section>
-
-                <div class="gap"></div>
-                <section id="our-story" class="py-1">
                     <div class="left-img"></div>
                     <div class="right-img"></div>
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-md-9 col-12 text-center">
-                                <div class="section-title animate__animated animate__fadeInDown">
-                                    <h1 class="fw-bold mb-2">Chuyện tình yêu</h1>
-                                    <p>Tình yêu không chỉ là một danh từ - nó là một động từ.
-                                    </p>
-                                    <p>Nó còn hơn cả một cảm giác - đó là sự quan tâm, chia sẻ, giúp đỡ, hy sinh.</p>
-                                </div>
-                            </div>
+                    <div class="row align-items-center mb-2">
+                      <div class="col-md-6 col-12 mb-2">
+                        <div class="name_groom mb-2">
+                          <h2>Võ Quốc Kiệt</h2>
                         </div>
-                        <div class="row justify-content-center">
-                            <div class="col-md col-12">
-                                <ul class="p-0">
-                                    <li>
-                                        <div
-                                            class="row justify-content-between mb-5 align-items-center box_content_our_story">
-                                            <div class="col-lg-5 col-12">
-                                                <div class="details">
-                                                    <h3>Gặp Gỡ</h3>
-                                                    <span class="date"> 2...0...hùi đó</span>
-                                                    <p>Câu chuyện bắt nguồn từ lời kể "Thằng bé đó nói... 30 tuổi hem ai
-                                                        cưới con...
-                                                        là nó cưới con đó mẹ". Và từ đó...những chiếc thuyền với công
-                                                        suất
-                                                        "LV max"
-                                                        từ phía 2 bên gia đình đã kéo tụi mình lại gần nhau, có những
-                                                        chặn
-                                                        đường đôi
-                                                        khi mỏi chân, tụi mình muốn dừng lại, nhưng những chiếc thuyền
-                                                        ấy
-                                                        vẫn hoạt
-                                                        động xuyên suốt, không nghỉ ngơi để đưa tụi mình đến lễ cưới
-                                                        hạnh
-                                                        phúc này.
-                                                        Tụi mình thật sự biết ơn vì đã luôn có gia đình bên cạnh yêu
-                                                        thương
-                                                        và đồng
-                                                        hành &lt;3.</p>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-5 col-12">
-                                                <div class="img-holder">
-                                                    <img src="./assets/images/hihi.jpeg" alt="" width="100%">
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </li>
-                                    <li>
-                                        <div
-                                            class="row justify-content-between align-items-center mb-5 flex-row-reverse box_content_our_story_reverse">
-
-                                            <div class="col-lg-5 col-12">
-                                                <div class="details">
-                                                    <h3>Bên Nhau</h3>
-                                                    <span class="date"> 2...0...hùi đó</span>
-                                                    <p>Câu chuyện bắt nguồn từ lời kể "Thằng bé đó nói... 30 tuổi hem ai
-                                                        cưới con...
-                                                        là nó cưới con đó mẹ". Và từ đó...những chiếc thuyền với công
-                                                        suất
-                                                        "LV max"
-                                                        từ phía 2 bên gia đình đã kéo tụi mình lại gần nhau, có những
-                                                        chặn
-                                                        đường đôi
-                                                        khi mỏi chân, tụi mình muốn dừng lại, nhưng những chiếc thuyền
-                                                        ấy
-                                                        vẫn hoạt
-                                                        động xuyên suốt, không nghỉ ngơi để đưa tụi mình đến lễ cưới
-                                                        hạnh
-                                                        phúc này.
-                                                        Tụi mình thật sự biết ơn vì đã luôn có gia đình bên cạnh yêu
-                                                        thương
-                                                        và đồng
-                                                        hành &lt;3.</p>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-5 col-12">
-                                                <div class="img-holder">
-                                                    <img src="./assets/images/haha.jpeg" alt="" width="100%">
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </li>
-                                    <li>
-                                        <div
-                                            class="row justify-content-between align-items-center mb-5 box_content_our_story">
-                                            <div class="col-lg-5 col-12">
-                                                <div class="details">
-                                                    <h3>Cầu Hôn</h3>
-                                                    <span class="date"> 2...0...hùi đó</span>
-                                                    <p>Câu chuyện bắt nguồn từ lời kể "Thằng bé đó nói... 30 tuổi hem ai
-                                                        cưới con...
-                                                        là nó cưới con đó mẹ". Và từ đó...những chiếc thuyền với công
-                                                        suất
-                                                        "LV max"
-                                                        từ phía 2 bên gia đình đã kéo tụi mình lại gần nhau, có những
-                                                        chặn
-                                                        đường đôi
-                                                        khi mỏi chân, tụi mình muốn dừng lại, nhưng những chiếc thuyền
-                                                        ấy
-                                                        vẫn hoạt
-                                                        động xuyên suốt, không nghỉ ngơi để đưa tụi mình đến lễ cưới
-                                                        hạnh
-                                                        phúc này.
-                                                        Tụi mình thật sự biết ơn vì đã luôn có gia đình bên cạnh yêu
-                                                        thương
-                                                        và đồng
-                                                        hành &lt;3.</p>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-5 col-12">
-                                                <div class="img-holder">
-                                                    <img src="./assets/images/hihi.jpeg" alt="" width="100%">
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </li>
-                                    <li>
-                                        <div
-                                            class="row justify-content-between align-items-center mb-5 flex-row-reverse box_content_our_story_reverse">
-
-                                            <div class="col-lg-5 col-12">
-                                                <div class="details">
-                                                    <h3>Một Nhà</h3>
-                                                    <span class="date"> 2...0...hùi đó</span>
-                                                    <p>Câu chuyện bắt nguồn từ lời kể "Thằng bé đó nói... 30 tuổi hem ai
-                                                        cưới con...
-                                                        là nó cưới con đó mẹ". Và từ đó...những chiếc thuyền với công
-                                                        suất
-                                                        "LV max"
-                                                        từ phía 2 bên gia đình đã kéo tụi mình lại gần nhau, có những
-                                                        chặn
-                                                        đường đôi
-                                                        khi mỏi chân, tụi mình muốn dừng lại, nhưng những chiếc thuyền
-                                                        ấy
-                                                        vẫn hoạt
-                                                        động xuyên suốt, không nghỉ ngơi để đưa tụi mình đến lễ cưới
-                                                        hạnh
-                                                        phúc này.
-                                                        Tụi mình thật sự biết ơn vì đã luôn có gia đình bên cạnh yêu
-                                                        thương
-                                                        và đồng
-                                                        hành &lt;3.</p>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-5 col-12">
-                                                <div class="img-holder">
-                                                    <img src="./assets/images/haha.jpeg" alt="" width="100%">
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </li>
-                                </ul>
-                            </div>
+                        <div class="groom_info">
+                          <p>
+                            Một chàng trai đến từ Bình Dương, hiện đang sinh
+                            sống và làm việc tại Bình Dương. Sống hướng ngoại,
+                            nhanh nhẹn, hoạt bát, thích tìm ra tật xâu của vợ
+                            mình.
+                          </p>
                         </div>
+                        <a
+                          href="https://www.facebook.com/"
+                          class="icon_social"
+                          target="_blank"
+                          ><i class="fa-brands fa-facebook"> </i>
+                        </a>
+                      </div>
+                      <div class="col-md-6 col-12 mb-2 img-groom">
+                        <img
+                          src="assets/images/groom.jpg"
+                          alt=""
+                          width="100%"
+                        />
+                      </div>
                     </div>
-                </section>
-                <section id="time-counter">
-                    <div class="overlay">
-                        <div class="container">
-                            <div class="row justify-content-between align-items-center">
-                                <div class="col-lg-5 col-12">
-                                    <span class="text-light">Counting the minutes for.....</span>
-                                    <h1 class="text-light">08 Dec 2024</h1>
-                                    <h1 class="text-light" style="font-size: 5rem !important;">The big day</h1>
-
-                                </div>
-                                <div class="col-lg-7 col-12 d-flex justify-content-center align-items-center">
-                                    <div class="launch-time d-flex gap-3">
-                                        <div class="row">
-                                            <div class="col-md-3 col-6">
-                                                <div class="time">
-                                                    <p id="days">00</p>
-                                                    <span>Ngày</span>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3 col-6">
-                                                <div class="time">
-                                                    <p id="hours">00</p>
-                                                    <span>Giờ</span>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3 col-6">
-                                                <div class="time">
-                                                    <p id="minutes">00</p>
-                                                    <span>Phút</span>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3 col-6">
-                                                <div class="time">
-                                                    <p id="seconds">00</p>
-                                                    <span>Giây</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                    <div class="row align-items-center flex-row-reverse mb-2">
+                      <div class="col-md-6 col-12 mb-2">
+                        <div class="name_bride mb-2">
+                          <h2>Nguyễn Thị Tuyết Anh</h2>
                         </div>
-
+                        <div class="bride_info">
+                          <p>
+                            Một cô nàng đến từ Bình Dương, hiện đang sinh sống
+                            và làm việc tại Bình Dương. Sống hướng ngoại, nhanh
+                            nhẹn, hoạt bát, thích ăn hiếp chồng của mình.
+                          </p>
+                        </div>
+                        <a
+                          href="https://www.facebook.com/"
+                          class="icon_social"
+                          target="_blank"
+                          ><i class="fa-brands fa-facebook"> </i>
+                        </a>
+                      </div>
+                      <div class="col-md-6 col-12 mb-2 img-bride">
+                        <img
+                          src="assets/images/bride.jpg"
+                          alt=""
+                          width="100%"
+                        />
+                      </div>
                     </div>
-
-                </section>
-
-                <section id="event" class="py-5">
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-md-9 col-12 text-center">
-                                <div class="section-title">
-                                    <h1 class="fw-bold mb-2">Sự Kiện Cưới</h1>
-                                    <p class="">Tình yêu không làm cho thế giới quay tròn. Tình yêu là những gì làm cho
-                                        chuyến đi đáng giá.</p>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-3 col-md-6 col-12 mb-3">
-                                <div class="card">
-                                    <img src="./assets/images/event_1.jpeg" class="card-img-top" alt="Sự kiện">
-                                    <div class="card-body text-center">
-                                        <p class="card-title mb-2">LỄ ĂN HỎI</p>
-                                        <p class="card-subtitle mb-2">15:00 18/05/2024</p>
-                                        <p class="card-text">KDC Kiệt Đoài - P. Văn An - Tp.Chí Linh - Tỉnh Hải Dương
-                                        </p>
-                                        <a href="#" class="btn btn-primary">Xem bản đồ</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-6 col-12 mb-3">
-                                <div class="card">
-                                    <img src="./assets/images/event_2.jpeg" class="card-img-top" alt="Sự kiện">
-                                    <div class="card-body text-center">
-                                        <p class="card-title mb-2">LỄ ĂN HỎI</p>
-                                        <p class="card-subtitle mb-2">15:00 18/05/2024</p>
-                                        <p class="card-text">KDC Kiệt Đoài - P. Văn An - Tp.Chí Linh - Tỉnh Hải Dương
-                                        </p>
-                                        <a href="#" class="btn btn-primary">Xem bản đồ</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-6 col-12 mb-3">
-                                <div class="card">
-                                    <img src="./assets/images/event_3.jpeg" class="card-img-top" alt="Sự kiện">
-                                    <div class="card-body text-center">
-                                        <p class="card-title mb-2">LỄ ĂN HỎI</p>
-                                        <p class="card-subtitle mb-2">15:00 18/05/2024</p>
-                                        <p class="card-text">KDC Kiệt Đoài - P. Văn An - Tp.Chí Linh - Tỉnh Hải Dương
-                                        </p>
-                                        <a href="#" class="btn btn-primary">Xem bản đồ</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-6 col-12 mb-3">
-                                <div class="card">
-                                    <img src="./assets/images/event_4.jpeg" class="card-img-top" alt="Sự kiện">
-                                    <div class="card-body text-center">
-                                        <p class="card-title mb-2">LỄ ĂN HỎI</p>
-                                        <p class="card-subtitle mb-2">15:00 18/05/2024</p>
-                                        <p class="card-text">KDC Kiệt Đoài - P. Văn An - Tp.Chí Linh - Tỉnh Hải Dương
-                                        </p>
-                                        <a href="#" class="btn btn-primary">Xem bản đồ</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-
-                </section>
-
-                <section id="space">
-                    <div class="overlay">
-                        <div class="container">
-                            <div class="row justify-content-center align-items-center">
-                                <div class="col-lg-9 col-12">
-                                    <span class="text-light">We are going to...</span>
-                                    <h1 class="text-light" style="font-size: 5rem !important;"> Celebrate Our Love</h1>
-                                    <h1 class="text-light">08 Dec 2024</h1>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-
-                </section>
-
-                <section id="album" class="py-5">
-                    <!-- Gallery -->
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-md-9 col-12 text-center">
-                                <div class="section-title">
-                                    <h1 class="fw-bold mb-1">Album Hình Cưới</h1>
-                                    <p class="">Được ai đó yêu sâu sắc sẽ mang lại cho bạn sức mạnh, trong khi yêu ai đó
-                                        sâu
-                                        sắc sẽ cho bạn dũng khí.</p>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
-
-                                <a href="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(73).webp"
-                                    data-fancybox="gallery" data-caption="Ngân hàng ABC" class="text-center">
-                                    <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(73).webp"
-                                        width="50%" class="w-100 shadow-1-strong rounded mb-4" />
-                                </a>
-                                <a href="https://mdbcdn.b-cdn.net/img/Photos/Vertical/mountain1.webp"
-                                    data-fancybox="gallery" data-caption="Ngân hàng ABC" class="text-center">
-                                    <img src="https://mdbcdn.b-cdn.net/img/Photos/Vertical/mountain1.webp" width="50%"
-                                        class="w-100 shadow-1-strong rounded mb-4" />
-                                </a>
-                            </div>
-
-                            <div class="col-lg-4 mb-4 mb-lg-0">
-                                <a href="https://mdbcdn.b-cdn.net/img/Photos/Vertical/mountain2.webp"
-                                    data-fancybox="gallery" data-caption="Ngân hàng ABC" class="text-center">
-                                    <img src="https://mdbcdn.b-cdn.net/img/Photos/Vertical/mountain2.webp" width="50%"
-                                        class="w-100 shadow-1-strong rounded mb-4" />
-                                </a>
-                                <a href="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(73).webp"
-                                    data-fancybox="gallery" data-caption="Ngân hàng ABC" class="text-center">
-                                    <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(73).webp"
-                                        width="50%" class="w-100 shadow-1-strong rounded mb-4" />
-                                </a>
-                            </div>
-
-                            <div class="col-lg-4 mb-4 mb-lg-0">
-                                <a href="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(18).webp"
-                                    data-fancybox="gallery" data-caption="Ngân hàng ABC" class="text-center">
-                                    <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(18).webp"
-                                        width="50%" class="w-100 shadow-1-strong rounded mb-4" />
-                                </a>
-                                <a href="https://mdbcdn.b-cdn.net/img/Photos/Vertical/mountain3.webp"
-                                    data-fancybox="gallery" data-caption="Ngân hàng ABC" class="text-center">
-                                    <img src="https://mdbcdn.b-cdn.net/img/Photos/Vertical/mountain3.webp" width="50%"
-                                        class="w-100 shadow-1-strong rounded mb-4" />
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Gallery -->
-                </section>
-
-                <section id="loi-chuc">
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-md-9 col-12 text-center">
-                                <div class="section-title">
-                                    <h1 class="fw-bold mb-2">Sổ Lưu Bút</h1>
-                                    <p class="">Cảm ơn yêu thương rất nhiều vì đã gửi những lời chúc mừng tốt đẹp nhất
-                                        đến
-                                        đám cưới của chúng mình!</p>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="row pb-5 justify-content-center">
-                            <div class="col-lg-5 col-11 mb-2">
-                                <form id="form-container" method="get">
-                                    <div class="row">
-                                        <div class="col-md-6 col-12">
-                                            <input type="text" id="name" name="name" required
-                                                class="form-control mb-2 shadow-none" placeholder="Họ tên" />
-                                        </div>
-                                        <div class="col-md-6 col-12"><input type="number" id="phone" name="phone"
-                                                required class="form-control mb-2 shadow-none"
-                                                placeholder="Số điện thoại" />
-                                        </div>
-                                        <div class="col-12 mb-2">
-                                            <textarea id="loichuc" class="form-control shadow-none" name="loichuc"
-                                                cols="20" rows="10" placeholder="Lời nhắn" required></textarea>
-                                        </div>
-                                        <div id="button-container"
-                                            class="d-flex align-items-center justify-content-between">
-                                            <button type="submit" id="submit"
-                                                class="btn btn-primary d-flex align-items-center">
-                                                Gửi lời chúc <i class="fa-solid fa-paper-plane px-2"></i>
-                                            </button>
-                                            <div class="d-flex gap-2">
-                                                <a href="https://zalo.me/0901430854" target="_blank"
-                                                    class="nav-link fw-bold">Liên hệ cô
-                                                    dâu</a>
-                                                <span class="pe-1 ps-1">|</span>
-                                                <a href="https://zalo.me/0901430854" target="_blank"
-                                                    class="nav-link fw-bold">
-
-                                                    Liên hệ
-                                                    chú
-                                                    rể
-                                                </a>
-
-                                            </div>
-
-                                        </div>
-                                    </div>
-
-                                </form>
-                            </div>
-                            <div class="col-lg-5 col-11 mb-2" id="show_loichuc">
-
-
-                            </div>
-                        </div>
-
-                    </div>
-
-
-                </section>
-                <section id="donate" class="py-5">
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-md-9 col-12 text-center">
-                                <div class="section-title">
-                                    <h1 class="fw-bold mb-2">Hộp Mừng Cưới</h1>
-
-                                </div>
-                            </div>
-                            <div class="row justify-content-center gap-3">
-                                <div class="col-md-4 col-12 card-bank">
-                                    <div class="d-flex flex-column align-items-center justify-content-center">
-                                        <h3 class="fw-bold py-3">Mừng cưới chú
-                                            rể</h3>
-                                        <a href="./assets/images/bank_1.jpg" data-fancybox="gallery"
-                                            data-caption="Ngân hàng ABC" class="text-center">
-                                            <img src=" ./assets/images/bank_1.jpg" width="50%" class="img-fluid" />
-                                        </a>
-                                        <span>Ngân hàng: <span class="fw-bold">ABC</span></span>
-                                        <span>Tên tài khoản: <span class="fw-bold">ABC</span></span>
-                                        <span>Số tài khoản: <span class="fw-bold">ABC</span></span>
-                                        <span>Chi nhánh: <span class="fw-bold">ABC</span></span>
-                                    </div>
-
-
-
-                                </div>
-                                <div class="col-md-4 col-12 card-bank">
-                                    <div class="d-flex flex-column align-items-center justify-content-center">
-                                        <h3 class="fw-bold py-3">Mừng cưới cô
-                                            dâu</h3>
-                                        <a href="./assets/images/bank_2.jpg" data-fancybox="gallery"
-                                            data-caption="Ngân hàng XYZ" class="text-center">
-                                            <img src=" ./assets/images/bank_2.jpg" width="50%" class="img-fluid" />
-                                        </a>
-                                        <span>Ngân hàng: <span class="fw-bold">ABC</span></span>
-                                        <span>Tên tài khoản: <span class="fw-bold">ABC</span></span>
-                                        <span>Số tài khoản: <span class="fw-bold">ABC</span></span>
-                                        <span>Chi nhánh: <span class="fw-bold">ABC</span></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </section>
-
-
-
-            </div>
-            <footer class="site-footer footer-style-1">
-                <div class="inner">
-                    <div class="couple-pic">
-                        <img src="./assets/images/ee.jpeg" alt="Thiệp cưới Quốc Kiệt &amp; Tuyết Anh <3">
-                    </div>
-                    <h2>Thank you!</h2>
+                  </div>
                 </div>
-            </footer>
+              </div>
+            </div>
+          </section>
+          <div class="gap"></div>
+          <section id="accessibilities">
+            <div class="container">
+              <div class="row justify-content-center">
+                <div class="col-md-9 col-12 text-center">
+                  <a
+                    href="#couple"
+                    class="btn btn-primary rounded-0 p-3 fs-4 mb-2"
+                  >
+                    <i class="fa-solid fa-signature px-2"></i>Chúng em</a
+                  >
+                  <a
+                    href="#event"
+                    class="btn btn-primary rounded-0 p-3 fs-4 mb-2"
+                  >
+                    <i class="fa-solid fa-calendar-days px-2"></i>Sự kiện của
+                    buổi tiệc</a
+                  >
+                  <a
+                    href="#mung-cuoi"
+                    class="btn btn-primary rounded-0 p-3 fs-4 mb-2"
+                  >
+                    <i class="fa-solid fa-sack-dollar px-2"></i>Mừng cưới</a
+                  >
+                </div>
+              </div>
+            </div>
+          </section>
 
+          <div class="gap"></div>
+          <section id="our-story" class="py-1">
+            <div class="left-img"></div>
+            <div class="right-img"></div>
+            <div class="container">
+              <div class="row justify-content-center">
+                <div class="col-md-9 col-12 text-center">
+                  <div
+                    class="section-title animate__animated animate__fadeInDown"
+                  >
+                    <h1 class="fw-bold mb-2">Chuyện tình yêu</h1>
+                    <p>
+                      Tình yêu không chỉ là một danh từ - nó là một động từ.
+                    </p>
+                    <p>
+                      Nó còn hơn cả một cảm giác - đó là sự quan tâm, chia sẻ,
+                      giúp đỡ, hy sinh.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="row justify-content-center">
+                <div class="col-md col-12">
+                  <ul class="p-0">
+                    <li>
+                      <div
+                        class="row justify-content-between mb-5 align-items-center box_content_our_story"
+                      >
+                        <div class="col-lg-5 col-12">
+                          <div class="details">
+                            <h3>Gặp Gỡ</h3>
+                            <span class="date">07/2018</span>
+                            <p>
+                              Câu chuyện bắt nguồn từ một lần tình cơ đi sinh
+                              nhật của một người bạn. Khi cả nhóm cùng dự tiệc
+                              xong, thì vô tình người bạn của nhà gái có việc
+                              nhờ mình chở về. Và sau cuộc gặp định mệnh ấy...
+                              thì chuyện gì tới cũng tới. Chúng mình tìm hiểu 03
+                              tháng trước khi quyết định quen nhau...
+                            </p>
+                          </div>
+                        </div>
+                        <div class="col-lg-5 col-12">
+                          <div class="img-holder">
+                            <img
+                              src="./assets/images/KEI_3819.jpg"
+                              alt=""
+                              width="100%"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div
+                        class="row justify-content-between align-items-center mb-5 flex-row-reverse box_content_our_story_reverse"
+                      >
+                        <div class="col-lg-5 col-12">
+                          <div class="details">
+                            <h3>Bên Nhau</h3>
+                            <span class="date">06/10/2018</span>
+                            <p>
+                              Như bao cặp đôi khác, trong suốt quá trình quen
+                              nhau cũng có buồn, vui, giận hờn và vô số lần bất
+                              động ý kiến, bất hoà, bất đồng ý kiến cá nhân, mâu
+                              thuẫn, những lỗi lầm khiến ta tưởng chừng như
+                              không thể bước tiếp đươc với nhau nữa và sau những
+                              lần ấy chúng mình đã ngồi lại nói chuyện với nhau
+                              một cách nghiêm túc và thấu hiểu nhau hơn...Các
+                              bạn biết đó và chúng mình đã cho nhau một cơ hội
+                              để khắc phục để giúp chúng mình trưởng thành hơn,
+                              yêu thương nhau và tôn trọng nhau...
+                            </p>
+                          </div>
+                        </div>
+                        <div class="col-lg-5 col-12">
+                          <div class="img-holder">
+                            <img
+                              src="./assets/images/KEI_3566.jpg"
+                              alt=""
+                              width="100%"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div
+                        class="row justify-content-between align-items-center mb-5 box_content_our_story"
+                      >
+                        <div class="col-lg-5 col-12">
+                          <div class="details">
+                            <h3>Cầu Hôn</h3>
+                            <span class="date">14/04/2024</span>
+                            <p>
+                              Sau những trận cãi nhau căng thẳng, bùng cháy thì
+                              chàng trai cũng đã có một buổi hẹn hò trên cả hẹn
+                              hò. Và sau buổi đó thì các bạn cũng đã biết rùi đó
+                            </p>
+                          </div>
+                        </div>
+                        <div class="col-lg-5 col-12">
+                          <div class="img-holder">
+                            <img
+                              src="./assets/images/KEI_2687.jpg"
+                              alt=""
+                              width="100%"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div
+                        class="row justify-content-between align-items-center mb-5 flex-row-reverse box_content_our_story_reverse"
+                      >
+                        <div class="col-lg-5 col-12">
+                          <div class="details">
+                            <h3>Một Nhà</h3>
+                            <span class="date">08/12/2024</span>
+                            <p>
+                              Chúng mình quyết định về chung một nhà, cùng chung
+                              một giường, cùng nhau dùng bữa cơm gia đình, cho
+                              nhau nói lời yêu thương nhiều hơn, chăm sóc nhau
+                              và hơn hết đồng hành cùng với nhau, hỗ trợ nhau,
+                              tiếp thêm sức mạnh để cùng nhau bước qua những thử
+                              thách sắp tới.
+                            </p>
+                          </div>
+                        </div>
+                        <div class="col-lg-5 col-12">
+                          <div class="img-holder">
+                            <img
+                              src="./assets/images/KEI_3100.jpg"
+                              alt=""
+                              width="100%"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section id="time-counter">
+            <div class="overlay">
+              <div class="container">
+                <div class="row justify-content-between align-items-center">
+                  <div class="col-lg-5 col-12">
+                    <span class="text-light"
+                      >Counting the minutes for.....</span
+                    >
+                    <h1 class="text-light">08 Dec 2024</h1>
+                    <h1 class="text-light" style="font-size: 5rem !important">
+                      The big day
+                    </h1>
+                  </div>
+                  <div
+                    class="col-lg-7 col-12 d-flex justify-content-center align-items-center"
+                  >
+                    <div class="launch-time d-flex gap-3">
+                      <div class="row">
+                        <div class="col-md-3 col-6">
+                          <div class="time">
+                            <p id="days">00</p>
+                            <span>Ngày</span>
+                          </div>
+                        </div>
+                        <div class="col-md-3 col-6">
+                          <div class="time">
+                            <p id="hours">00</p>
+                            <span>Giờ</span>
+                          </div>
+                        </div>
+                        <div class="col-md-3 col-6">
+                          <div class="time">
+                            <p id="minutes">00</p>
+                            <span>Phút</span>
+                          </div>
+                        </div>
+                        <div class="col-md-3 col-6">
+                          <div class="time">
+                            <p id="seconds">00</p>
+                            <span>Giây</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
 
+          <section id="event" class="py-5">
+            <div class="container">
+              <div class="row justify-content-center">
+                <div class="col-md-9 col-12 text-center">
+                  <div class="section-title">
+                    <h1 class="fw-bold mb-2">Sự Kiện Cưới</h1>
+                    <p class="">
+                      Tình yêu không làm cho thế giới quay tròn. Tình yêu là
+                      những gì làm cho chuyến đi đáng giá.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-3 col-md-6 col-12 mb-3">
+                  <div class="card">
+                    <img
+                      src="./assets/images/KEI_3666.jpg"
+                      class="card-img-top"
+                      alt="Sự kiện"
+                    />
+                    <div class="card-body text-center">
+                      <p class="card-title mb-2">LỄ ĂN HỎI</p>
+                      <p class="card-subtitle mb-2">09:00 14/04/2024</p>
+                      <p class="card-text">
+                        KDC Kiệt Đoài - P. Văn An - Tp.Chí Linh - Tỉnh Hải Dương
+                      </p>
+                      <a href="#" class="btn btn-primary">Xem bản đồ</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-12 mb-3">
+                  <div class="card">
+                    <img
+                      src="./assets/images/KEI_3735.jpg"
+                      class="card-img-top"
+                      alt="Sự kiện"
+                    />
+                    <div class="card-body text-center">
+                      <p class="card-title mb-2">LỄ PHÉP CHUẨN</p>
+                      <p class="card-subtitle mb-2">15:00 18/05/2024</p>
+                      <p class="card-text">
+                        Thánh đường: Nhà thờ Thánh Tâm - Giáo Sứ Búng
+                      </p>
+                      <a
+                        href="https://maps.app.goo.gl/oo74vbx8qLuVAJad9"
+                        target="_blank"
+                        class="btn btn-primary"
+                        >Xem bản đồ</a
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-12 mb-3">
+                  <div class="card">
+                    <img
+                      src="./assets/images/KEI_4068.jpg"
+                      class="card-img-top"
+                      alt="Sự kiện"
+                    />
+                    <div class="card-body text-center">
+                      <p class="card-title mb-2">LỄ NHÓM HỌ</p>
+                      <p class="card-subtitle mb-2">13:00 30/11/2024</p>
+                      <p class="card-text">
+                        Tại Trung tâm Hội nghị - Tiệc cưới Vita Palace
+                      </p>
+                      <a
+                        href="https://maps.app.goo.gl/LcS4STWkjsPktxLJ9"
+                        target="_blank"
+                        class="btn btn-primary"
+                        >Xem bản đồ</a
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-12 mb-3">
+                  <div class="card">
+                    <img
+                      src="./assets/images/KEI_2793.jpg"
+                      class="card-img-top"
+                      alt="Sự kiện"
+                    />
+                    <div class="card-body text-center">
+                      <p class="card-title mb-2">LỄ THÀNH HÔN</p>
+                      <p class="card-subtitle mb-2">09:00 08/12/2024</p>
+                      <p class="card-text">
+                        Tại Trung Tâm Hội Nghị Tiệc Cưới Võ Gia Palace
+                      </p>
+                      <a
+                        href="https://maps.app.goo.gl/ZBVSKqDM8D16z9P87"
+                        target="_blank"
+                        class="btn btn-primary"
+                        >Xem bản đồ</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
 
+          <section id="space">
+            <div class="overlay">
+              <div class="container">
+                <div class="row justify-content-center align-items-center">
+                  <div class="col-lg-9 col-12">
+                    <span class="text-light">We are going to...</span>
+                    <h1 class="text-light" style="font-size: 5rem !important">
+                      Celebrate Our Love
+                    </h1>
+                    <h1 class="text-light">08 Dec 2024</h1>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
 
+          <section id="album" class="py-5">
+            <!-- Gallery -->
+            <div class="container">
+              <div class="row justify-content-center">
+                <div class="col-md-9 col-12 text-center">
+                  <div class="section-title">
+                    <h1 class="fw-bold mb-1">Album Hình Cưới</h1>
+                    <p class="">
+                      Được ai đó yêu sâu sắc sẽ mang lại cho bạn sức mạnh, trong
+                      khi yêu ai đó sâu sắc sẽ cho bạn dũng khí.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
+                  <a
+                    href="./assets/images/KEI_2564.jpg"
+                    data-fancybox="gallery"
+                    data-caption="Ngân hàng ABC"
+                    class="text-center"
+                  >
+                    <img
+                      src="./assets/images/KEI_2564.jpg"
+                      width="50%"
+                      class="w-100 shadow-1-strong rounded mb-4"
+                    />
+                  </a>
+                  <a
+                    href="./assets/images/KEI_4043.jpg"
+                    data-fancybox="gallery"
+                    data-caption="Ngân hàng ABC"
+                    class="text-center"
+                  >
+                    <img
+                      src="./assets/images/KEI_4043.jpg"
+                      width="50%"
+                      class="w-100 shadow-1-strong rounded mb-4"
+                    />
+                  </a>
+                </div>
+
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                  <a
+                    href="./assets/images/KEI_2941.jpg"
+                    data-fancybox="gallery"
+                    data-caption="Ngân hàng ABC"
+                    class="text-center"
+                  >
+                    <img
+                      src="./assets/images/KEI_2941.jpg"
+                      width="50%"
+                      class="w-100 shadow-1-strong rounded mb-4"
+                    />
+                  </a>
+                  <a
+                    href="./assets/images/KEI_2564.jpg"
+                    data-fancybox="gallery"
+                    data-caption="Ngân hàng ABC"
+                    class="text-center"
+                  >
+                    <img
+                      src="./assets/images/KEI_2564.jpg"
+                      width="50%"
+                      class="w-100 shadow-1-strong rounded mb-4"
+                    />
+                  </a>
+                </div>
+
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                  <a
+                    href="/assets/images/KEI_3037.jpg"
+                    data-fancybox="gallery"
+                    data-caption="Ngân hàng ABC"
+                    class="text-center"
+                  >
+                    <img
+                      src="/assets/images/KEI_3037.jpg"
+                      width="50%"
+                      class="w-100 shadow-1-strong rounded mb-4"
+                    />
+                  </a>
+                  <a
+                    href="/assets/images/KEI_2353.jpg"
+                    data-fancybox="gallery"
+                    data-caption="Ngân hàng ABC"
+                    class="text-center"
+                  >
+                    <img
+                      src="/assets/images/KEI_2353.jpg"
+                      width="50%"
+                      class="w-100 shadow-1-strong rounded mb-4"
+                    />
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Gallery -->
+          </section>
+
+          <section id="loi-chuc">
+            <div class="container">
+              <div class="row justify-content-center">
+                <div class="col-md-9 col-12 text-center">
+                  <div class="section-title">
+                    <h1 class="fw-bold mb-2">Sổ Lưu Bút</h1>
+                    <p class="">
+                      Cảm ơn yêu thương rất nhiều vì đã gửi những lời chúc mừng
+                      tốt đẹp nhất đến đám cưới của chúng mình!
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="row pb-5 justify-content-center">
+                <div class="col-lg-5 col-11 mb-2">
+                  <form id="form-container" method="get">
+                    <div class="row">
+                      <div class="col-md-6 col-12">
+                        <input
+                          type="text"
+                          id="name"
+                          name="name"
+                          required
+                          class="form-control mb-2 shadow-none"
+                          placeholder="Họ tên"
+                        />
+                      </div>
+                      <div class="col-md-6 col-12">
+                        <input
+                          type="number"
+                          id="phone"
+                          name="phone"
+                          required
+                          class="form-control mb-2 shadow-none"
+                          placeholder="Số điện thoại"
+                        />
+                      </div>
+                      <div class="col-12 mb-2">
+                        <textarea
+                          id="loichuc"
+                          class="form-control shadow-none"
+                          name="loichuc"
+                          cols="20"
+                          rows="10"
+                          placeholder="Lời nhắn"
+                          required
+                        ></textarea>
+                      </div>
+                      <div
+                        id="button-container"
+                        class="d-flex align-items-center justify-content-between"
+                      >
+                        <button
+                          type="submit"
+                          id="submit"
+                          class="btn btn-primary d-flex align-items-center"
+                        >
+                          Gửi lời chúc
+                          <i class="fa-solid fa-paper-plane px-2"></i>
+                        </button>
+                        <div class="d-flex gap-2">
+                          <a
+                            href="https://zalo.me/0901430854"
+                            target="_blank"
+                            class="nav-link fw-bold"
+                            >Liên hệ cô dâu</a
+                          >
+                          <span class="pe-1 ps-1">|</span>
+                          <a
+                            href="https://zalo.me/0901430854"
+                            target="_blank"
+                            class="nav-link fw-bold"
+                          >
+                            Liên hệ chú rể
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+                <div class="col-lg-5 col-11 mb-2" id="show_loichuc"></div>
+              </div>
+            </div>
+          </section>
+          <section id="donate" class="py-5">
+            <div class="container">
+              <div class="row justify-content-center">
+                <div class="col-md-9 col-12 text-center">
+                  <div class="section-title">
+                    <h1 class="fw-bold mb-2">Hộp Mừng Cưới</h1>
+                  </div>
+                </div>
+                <div class="row justify-content-center gap-3">
+                  <div class="col-md-4 col-12 card-bank">
+                    <div
+                      class="d-flex flex-column align-items-center justify-content-center"
+                    >
+                      <h3 class="fw-bold py-3">Mừng cưới chú rể</h3>
+                      <a
+                        href="./assets/images/bank_1.jpg"
+                        data-fancybox="gallery"
+                        data-caption="Ngân hàng ABC"
+                        class="text-center"
+                      >
+                        <img
+                          src=" ./assets/images/bank_1.jpg"
+                          width="50%"
+                          class="img-fluid"
+                        />
+                      </a>
+                      <span>Ngân hàng: <span class="fw-bold">ABC</span></span>
+                      <span
+                        >Tên tài khoản: <span class="fw-bold">ABC</span></span
+                      >
+                      <span
+                        >Số tài khoản: <span class="fw-bold">ABC</span></span
+                      >
+                      <span>Chi nhánh: <span class="fw-bold">ABC</span></span>
+                    </div>
+                  </div>
+                  <div class="col-md-4 col-12 card-bank">
+                    <div
+                      class="d-flex flex-column align-items-center justify-content-center"
+                    >
+                      <h3 class="fw-bold py-3">Mừng cưới cô dâu</h3>
+                      <a
+                        href="./assets/images/bank_2.jpg"
+                        data-fancybox="gallery"
+                        data-caption="Ngân hàng XYZ"
+                        class="text-center"
+                      >
+                        <img
+                          src=" ./assets/images/bank_2.jpg"
+                          width="50%"
+                          class="img-fluid"
+                        />
+                      </a>
+                      <span>Ngân hàng: <span class="fw-bold">ABC</span></span>
+                      <span
+                        >Tên tài khoản: <span class="fw-bold">ABC</span></span
+                      >
+                      <span
+                        >Số tài khoản: <span class="fw-bold">ABC</span></span
+                      >
+                      <span>Chi nhánh: <span class="fw-bold">ABC</span></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
         </div>
+        <footer class="site-footer footer-style-1">
+          <div class="inner">
+            <div class="couple-pic">
+              <img
+                src="./assets/images/ee.jpeg"
+                alt="Thiệp cưới Quốc Kiệt &amp; Tuyết Anh <3"
+              />
+            </div>
+            <h2>Thank you!</h2>
+          </div>
+        </footer>
+      </div>
     </div>
-
 
     <div id="menu-access" class="" aria-hidden="true">
-        <div class="btn-menu-open" style="display: none;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list"
-                viewBox="0 0 16 16">
-                <path fill-rule="evenodd"
-                    d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5">
-                </path>
-            </svg>
-        </div>
-        <div class="btn-menu-close" style="display: block;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg"
-                viewBox="0 0 16 16">
-                <path
-                    d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z">
-                </path>
-            </svg>
-        </div>
-        <ul class="p-0 m-0 list-menu-icon" style="opacity: 1;">
-            <li class="text-center">
-                <a href="#our-story" class="text-white">
-                    <span class="content-button tooltipBtn">
-                        <span class="tooltiptext" style="">Chuyện tình yêu</span>
-                        <img class="access-icon text-white" src="./assets/images/love.png" alt="">
-                    </span>
-                </a>
-            </li>
-            <li class="text-center">
-                <a href="#loi-chuc" class="text-white">
-                    <span class="content-button tooltipBtn">
-                        <span class="tooltiptext" style="">Gửi lời chúc</span>
-                        <img class="access-icon text-white" src="./assets/images/wishes.png" alt="">
-                    </span>
-                </a>
-            </li>
-            <li class="text-center buttonDonate ">
-                <a href="#donate" class="text-white">
-                    <span class="content-button tooltipBtn">
-                        <span class="tooltiptext" style="">Mừng cưới</span>
-                        <img class="access-icon" src="./assets/images/money_bag.png" alt="">
-                    </span>
-                </a>
-            </li>
-        </ul>
+      <div class="btn-menu-open" style="display: none">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="currentColor"
+          class="bi bi-list"
+          viewBox="0 0 16 16"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"
+          ></path>
+        </svg>
+      </div>
+      <div class="btn-menu-close" style="display: block">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="currentColor"
+          class="bi bi-x-lg"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"
+          ></path>
+        </svg>
+      </div>
+      <ul class="p-0 m-0 list-menu-icon" style="opacity: 1">
+        <li class="text-center">
+          <a href="#our-story" class="text-white">
+            <span class="content-button tooltipBtn">
+              <span class="tooltiptext" style="">Chuyện tình yêu</span>
+              <img
+                class="access-icon text-white"
+                src="./assets/images/love.png"
+                alt=""
+              />
+            </span>
+          </a>
+        </li>
+        <li class="text-center">
+          <a href="#loi-chuc" class="text-white">
+            <span class="content-button tooltipBtn">
+              <span class="tooltiptext" style="">Gửi lời chúc</span>
+              <img
+                class="access-icon text-white"
+                src="./assets/images/wishes.png"
+                alt=""
+              />
+            </span>
+          </a>
+        </li>
+        <li class="text-center buttonDonate">
+          <a href="#donate" class="text-white">
+            <span class="content-button tooltipBtn">
+              <span class="tooltiptext" style="">Mừng cưới</span>
+              <img
+                class="access-icon"
+                src="./assets/images/money_bag.png"
+                alt=""
+              />
+            </span>
+          </a>
+        </li>
+      </ul>
     </div>
 
-
-    <div class="offcanvas offcanvas-end opacity-50" tabindex="-1" id="offcanvasRight"
-        aria-labelledby="offcanvasRightLabel">
-        <div class="offcanvas-header border-bottom">
-            <h2 class="offcanvas-title" id="offcanvasRightLabel">Quốc Kiệt <i class="fa-regular fa-heart px-2"
-                    style="color: var(--color-pink-dark);"></i>
-                Tuyết Anh</h2>
-            <button type="button" class="btn-close shadow-none" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        <div class="offcanvas-body">
-            <ul class="">
-                <li><a href="#couple" class="text-decoration-none nav-link mb-3">Cặp đôi</a></li>
-                <li><a href="#our-story" class="text-decoration-none nav-link mb-3">Chuyện tình yêu </a>
-                </li>
-                <li><a href="#event" class="text-decoration-none nav-link mb-3">Sự kiện cưới</a></li>
-                <li><a href="#album" class="text-decoration-none nav-link mb-3">Album hình cưới</a></li>
-                <li><a href="#donate" class="text-decoration-none nav-link mb-3">Mừng cưới</a></li>
-            </ul>
-        </div>
+    <div
+      class="offcanvas offcanvas-end opacity-50"
+      tabindex="-1"
+      id="offcanvasRight"
+      aria-labelledby="offcanvasRightLabel"
+    >
+      <div class="offcanvas-header border-bottom">
+        <h2 class="offcanvas-title" id="offcanvasRightLabel">
+          Quốc Kiệt
+          <i
+            class="fa-regular fa-heart px-2"
+            style="color: var(--color-pink-dark)"
+          ></i>
+          Tuyết Anh
+        </h2>
+        <button
+          type="button"
+          class="btn-close shadow-none"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="">
+          <li>
+            <a href="#couple" class="text-decoration-none nav-link mb-3"
+              >Cặp đôi</a
+            >
+          </li>
+          <li>
+            <a href="#our-story" class="text-decoration-none nav-link mb-3"
+              >Chuyện tình yêu
+            </a>
+          </li>
+          <li>
+            <a href="#event" class="text-decoration-none nav-link mb-3"
+              >Sự kiện cưới</a
+            >
+          </li>
+          <li>
+            <a href="#album" class="text-decoration-none nav-link mb-3"
+              >Album hình cưới</a
+            >
+          </li>
+          <li>
+            <a href="#donate" class="text-decoration-none nav-link mb-3"
+              >Mừng cưới</a
+            >
+          </li>
+        </ul>
+      </div>
     </div>
     <!-- Scripts -->
 
     <script src="./assets/libs/swiper/swiper-bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
-        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <script src="./assets/libs/animate/wow.min.js"></script>
     <script src="./assets/libs/jquery-toast-plugin/jquery.toast.min.js"></script>
     <script src="./assets/js/scripts.js"></script>
     <script src="./assets/libs/bootstrap5/js/bootstrap.bundle.min.js"></script>
-    <script type="text/javascript" src="./assets/libs/sweetalert2/sweetalert2.all.min.js"></script>
-    <script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+    <script
+      type="text/javascript"
+      src="./assets/libs/sweetalert2/sweetalert2.all.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"
+    ></script>
     <script type="module" src="./assets/js/firebase.js"></script>
     <script type="text/javascript" src="./assets/js/validate.js"></script>
-
-
-
-</body>
-
+  </body>
 </html>
