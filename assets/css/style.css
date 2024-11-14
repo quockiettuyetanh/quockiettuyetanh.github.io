@@ -378,14 +378,16 @@ i.mobile {
   position: relative;
   padding: 260px 0;
   height: 80%;
-  background: url(../images/counter.jpg) 30% 30% / cover no-repeat local;
+  background: url(https://res.cloudinary.com/diwwbxujr/image/upload/v1731593054/counter_cta11v.jpg)
+    30% 30% / cover no-repeat local;
 }
 
 #space {
   position: relative;
   padding: 260px 0;
   height: 80%;
-  background: url(../images/banner.jpg) center center / cover no-repeat local;
+  background: url(https://res.cloudinary.com/diwwbxujr/image/upload/v1731592439/banner_l6pevb.jpg)
+    center center / cover no-repeat local;
 }
 
 #time-counter .overlay {
