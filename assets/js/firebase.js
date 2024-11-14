@@ -57,8 +57,6 @@ function getAllData(location) {
     .then((snapshot) => {
       if (snapshot.exists()) {
         const data = snapshot.val();
-        console.log("Data retrieved:", data);
-
         const showLoichucElement = document.getElementById("show_loichuc");
         showLoichucElement.innerHTML = ""; // Clear previous content
 
